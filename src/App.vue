@@ -25,7 +25,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { ElLoading } from 'element-plus'
-import {createDeviceDetector} from 'next-vue-device-detector'
+import { createDeviceDetector } from 'next-vue-device-detector'
 
 const loadingInstance = ElLoading.service({ fullscreen: true, lock: true })
 const device = createDeviceDetector()
