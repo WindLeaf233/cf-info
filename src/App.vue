@@ -4,8 +4,7 @@
       <el-header class="header">
         <strong class="title">cf-info</strong>
       </el-header>
-      <el-container>
-        <el-aside :width="asideWidth + 'px'"></el-aside>
+      <el-container :class="device.mobile ? 'main-container-mobile' : 'main-container-desktop'">
         <el-main>
           <Suspense>
             <template #default>
@@ -18,7 +17,6 @@
             </template>
           </Suspense>
         </el-main>
-        <el-aside :width="asideWidth + 'px'"></el-aside>
       </el-container>
     </el-container>
   </div>
@@ -27,9 +25,10 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { ElLoading } from 'element-plus'
+import {createDeviceDetector} from 'next-vue-device-detector'
 
-const asideWidth = '150'
 const loadingInstance = ElLoading.service({ fullscreen: true, lock: true })
+const device = createDeviceDetector()
 
 const InfoTable = defineAsyncComponent(() => import('@/components/InfoTable'))
 </script>
@@ -37,7 +36,7 @@ const InfoTable = defineAsyncComponent(() => import('@/components/InfoTable'))
 <style scoped>
 .header {
   margin: auto;
-  padding: 3% 3% 5%;
+  padding-top: 3%;
   text-align: center;
 }
 
@@ -46,5 +45,14 @@ const InfoTable = defineAsyncComponent(() => import('@/components/InfoTable'))
   margin: auto;
   display: inline-block;
   vertical-align: middle;
+}
+
+.main-container-desktop {
+  padding: 3% 7% 7%;
+}
+
+.main-container-mobile {
+  padding: 0;
+  width: 100%;
 }
 </style>
