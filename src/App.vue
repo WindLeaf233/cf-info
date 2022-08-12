@@ -38,10 +38,13 @@ const InfoTable = defineAsyncComponent(() => import('@/components/InfoTable'))
 .header {
   margin: auto;
   padding: 3% 3% 5%;
+  text-align: center;
 }
 
 .title {
   font-size: 30px;
   margin: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 </style>
