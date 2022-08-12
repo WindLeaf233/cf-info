@@ -14,6 +14,11 @@
 <script setup>
 import axios from 'axios'
 import { ElNotification } from 'element-plus'
+import { defineProps } from 'vue'
+
+const props = defineProps([
+    'loadingInstance'
+])
 
 const formatterLatency = (row) => `${row.latency}ms`
 const formatterLoss = (row) => `${row.loss}%`
@@ -32,4 +37,5 @@ const getData = async function() {
 }
 
 let data = await getData()
+props.loadingInstance.close()
 </script>
