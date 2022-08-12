@@ -9,6 +9,7 @@
     <el-table-column prop="sptname" label="测速节点" sortable></el-table-column>
     <el-table-column prop="time" label="时间" sortable></el-table-column>
   </el-table>
+  <el-backtop :right="100" :bottom="100"></el-backtop>
 </template>
 
 <script setup>
