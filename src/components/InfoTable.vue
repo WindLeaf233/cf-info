@@ -1,6 +1,6 @@
 <template>
   <el-table :data="data" style="width: 100%" :default-sort="{ prop: 'time', order: 'descending' }">
-    <el-table-column prop="line" label="节点" sortable></el-table-column>
+    <el-table-column prop="line" label="运营商" sortable></el-table-column>
     <el-table-column prop="ip" label="IP 地址" sortable></el-table-column>
     <el-table-column prop="latency" label="平均延迟" sortable :formatter="formatterLatency"></el-table-column>
     <el-table-column prop="loss" label="丢包率" sortable :formatter="formatterLoss"></el-table-column>
