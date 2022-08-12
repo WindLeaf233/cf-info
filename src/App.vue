@@ -9,9 +9,13 @@
         <el-main>
           <Suspense>
             <template #default>
-              <InfoTable :loadingInstance="loadingInstance"></InfoTable>
+              <div>
+                <InfoTable :loadingInstance="loadingInstance"></InfoTable>
+              </div>
             </template>
-            <template #fallback></template>
+            <template #fallback>
+              <div></div>
+            </template>
           </Suspense>
         </el-main>
         <el-aside :width="asideWidth + 'px'"></el-aside>
